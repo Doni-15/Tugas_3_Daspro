@@ -1,0 +1,40 @@
+program diskon_belanjaan;
+uses crt;
+var 
+    diskon, dibayar: real;
+    total: longint;
+begin
+    clrscr;
+    write('Masukkan total belanjaan anda: '); 
+    readln(total);
+
+    if (total < 100000) then
+        begin
+           writeln('Tidak ada diskon');
+           writeln('Total yang harus dibayar: ', total);
+        end
+
+    else if (total >= 100000) and (total <= 499999) then
+        begin
+            diskon := 0.1;
+            writeln('Diskon 10%');
+            dibayar := total - (total * diskon);
+            writeln('Total yang harus dibayar: ', dibayar:0:1);
+        end
+
+    else if (total >= 500000) and (total <= 999999) then
+        begin
+            diskon := 0.2;
+            writeln('Diskon 20%');
+            dibayar := total - (total * diskon);
+            writeln('Total yang harus dibayar: ', dibayar:0:1);
+        end
+
+    else
+        begin
+            diskon := 0.3;
+            writeln('Diskon 30%');
+            dibayar := total - (total * diskon);
+            writeln('Total yang harus dibayar: ', dibayar:0:1);
+        end;
+end.
