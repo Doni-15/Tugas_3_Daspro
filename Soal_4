@@ -1,0 +1,61 @@
+program kalkulkator;
+uses crt;
+var 
+    bil1, bil2, hasil : real;
+    pilih : char;
+begin
+    clrscr;
+    writeln('1. Penjumlahan');
+    writeln('2. Pengurangan');
+    writeln('3. Perkalian');
+    writeln('4. Pembagian');
+    writeln(' ');
+
+    write('Pilih dari angka di atas operasi apa yang ingin anda jalankan: '); readln(pilih);
+  
+    case pilih of
+        '1' : 
+            begin
+                write('Masukkan bilangan pertama : '); readln(bil1);
+                write('Masukkan bilangan kedua   : '); readln(bil2);
+                hasil := bil1 + bil2;
+                writeln('Hasil dari operasi penjumlahan adalah : ', hasil:0:1);
+            end;
+
+        '2' : 
+            begin
+                write('Masukkan bilangan pertama : '); readln(bil1);
+                write('Masukkan bilangan kedua   : '); readln(bil2);
+                hasil := bil1 - bil2;     
+                writeln('Hasil dari operasi pengurangan adalah : ', hasil:0:1);
+            end;
+
+        '3' : 
+            begin
+                write('Masukkan bilangan pertama : '); readln(bil1);
+                write('Masukkan bilangan kedua   : '); readln(bil2);
+                hasil := bil1 * bil2;
+                writeln('Hasil dari operasi perkalian adalah : ', hasil:0:1);
+            end;
+
+        '4' : 
+            begin
+                write('Masukkan bilangan pertama : '); readln(bil1);
+                write('Masukkan bilangan kedua   : '); readln(bil2);
+
+                if (bil2 = 0) then
+                    begin
+                        writeln('Hasil tidak terdefinisi');
+                    end
+
+                else
+                    begin
+                        hasil := bil1 / bil2;
+                        writeln('Hasil dari operasi pembagian adalah : ', hasil:0:1);
+                    end;
+            end;
+
+        else
+            writeln('Angka tidak tersedia');
+    end;
+end.
